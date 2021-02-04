@@ -1,1 +1,1 @@
-在Tushare将A股所有股票的前复权日线行情下载到本地MySQL数据库(Init_StockALL_Sp.py)，并手动更新(update_stock.py)
+先初始化行情表格（stock_stock_all.sql），然后在Tushare将A股所有股票的前复权日线行情下载到本地MySQL数据库(Init_StockALL_Sp.py)，并手动更新(update_stock.py)
