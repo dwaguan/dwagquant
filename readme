@@ -12,6 +12,6 @@ pip install backtrader
 
 使用教程：
 1. 先初始化行情表格（在MySQL里运行stock_stock_all.sql，具体方法可以百度）
-2. 获取tushare账号和积分，并将token存到根目录下config.py文件的token变量中
+2. 获取tushare账号和积分，并将token存到根目录下config.py文件的token变量中，把其他文件也存到相同目录下
 3. 然后在Tushare将A股所有股票的前复权日线行情下载到本地MySQL数据库(Init_StockALL_Sp.py)，之后可以手动更新至当前日期(update_stock.py)
 4. 用开源回测平台Backtrader进行回测（TEST_1.py），内部包含一套简单的底部突破买入和回撤止损策略。
