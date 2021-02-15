@@ -1,2 +1,20 @@
-先初始化行情表格（stock_stock_all.sql），然后在Tushare将A股所有股票的前复权日线行情下载到本地MySQL数据库(Init_StockALL_Sp.py)，并手动更新(update_stock.py)
-用开源回测平台Backtrader进行回测（TEST_1.py）
+基于Tushare数据获取的A股回测框架
+
+Tushare是一个免费、开源的python财经数据接口包。主要实现对股票等金融数据从数据采集、清洗加工 到 数据存储的过程，能够为金融分析人员提供快速、整洁、和多样的便于分析的数据，
+为他们在数据获取方面极大地减轻工作量，使他们更加专注于策略和模型的研究与实现上。
+考虑到Python pandas包在金融量化分析中体现出的优势，Tushare返回的绝大部分的数据格式都是pandas DataFrame类型，非常便于用pandas/NumPy/Matplotlib进行数据分析和可视化。
+当然，如果您习惯了用Excel或者关系型数据库做分析，您也可以通过Tushare的数据存储功能，将数据全部保存到本地后进行分析。
+应一些用户的请求，从0.2.5版本开始，Tushare同时兼容Python 2.x和Python 3.x，对部分代码进行了重构，并优化了一些算法，确保数据获取的高效和稳定。
+本项目主要使用了Tushare的日线行情数据接口。
+使用前需先注册Tushare并获取积分。
+
+backtrader是一个开源、免费的量化回测框架，本项目基于backtrader开发。
+
+使用条件：
+pip install tushare
+pip install backtrader
+
+使用教程：
+1. 先初始化行情表格（在MySQL里运行stock_stock_all.sql，具体方法可以百度）
+2. 然后在Tushare将A股所有股票的前复权日线行情下载到本地MySQL数据库(Init_StockALL_Sp.py)，之后可以手动更新至当前日期(update_stock.py)
+3. 用开源回测平台Backtrader进行回测（TEST_1.py），内部包含一套简单的底部突破买入和回撤止损策略。
